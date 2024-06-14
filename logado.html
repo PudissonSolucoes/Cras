@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Passarinho da sorte</title>
+    <link rel="icon" type="image/x-icon" href="img/logoPassaro.ico">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <iframe src="header.html" style="height: 100px;
+        width: 99%;"></iframe>
+    <section>
+        <article>
+            <h1>Rodadas Anteriores:</h1>
+            <div class="anteriores">
+                <p id="mult1">0.00 x</p>
+                <p id="mult2">0.00 x</p>
+                <p id="mult3">0.00 x</p>
+            </div>
+
+            <img src="img/estilingue.png" style="display: none;">
+            <img src="img/frames/frame0.png" style="display: none;">
+            <img src="img/frames/frame1.png" style="display: none;">
+            <img src="img/frames/frame2.png" style="display: none;">
+            <img src="img/frames/frame3.png" style="display: none;">
+            <img src="img/frames/frame4.png" style="display: none;">
+            <img src="img/frames/frame5.png" style="display: none;">
+            <img src="img/frames/frame6.png" style="display: none;">
+            <img src="img/frames/frame7.png" style="display: none;">
+            <img src="img/frames/frame8.png" style="display: none;">
+            <img src="img/frames/frame9.png" style="display: none;">
+            <img src="img/frames/frame10.png" style="display: none;">
+            <img src="img/frames/frame11.png" style="display: none;">
+            <img src="img/frames/frame12.png" style="display: none;">
+            <img src="img/explosion.png" style="display: none;">
+
+
+            <canvas id="myCanvas" width="500px" height="450px">
+
+            </canvas>
+
+        </article>
+        <article style="margin-block-start: auto;">
+            <h1 id="mudarNome">Bem vindo Ciclano</h1>
+            <textarea placeholder=" ⌶ Valor" rows="2" cols="10" id="inValor" required type="number"></textarea>
+            <br> <br>
+            <button type="button" class="btnVerde" id="apostar">Apostar</button>
+            <br> <br>
+            <button type="button" class="btnCinza" id="resgatar">Resgatar</button>
+            <h2 id="statusDinheiro">Parado</h2>
+            <h1 id="valorGanhado">0</h1>
+            <h1>Seu Saldo atual:</h1>
+            <h1 id="inSaldoAtual">R$ 0 </h1>
+
+        </article>
+    </section>
+
+    <section class="aposta">
+        <div>
+
+            <button type="button" class="btnMeio" data-toggle="modal" data-target="#comoJogar">Como
+                funciona</button>
+
+            <div class="modal fade" id="comoJogar" tabindex="-1" role="dialog" aria-labelledby="comoJogarLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="comoJogarLabel">Como Funciona</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Esse tipo de jogo é conhecido popularmente como <b>Crash</b>.</p>
+                            <p>* Você aposta um valor específico.</p>
+                            <p>* Você tem que resgatar o seu dinheiro antes de 'estourar'.
+                                Porém quanto mais tempo você esperar para você não resgatar,mais você pode ganhar.
+                            </p>
+
+                            <p>* Se você resgatar,você resgatará seu valor apostado X multiplicador</p>
+                            <p>* Se 'estourar' você perde todo dinheiro apostado.</p>
+                            <p>--------------------------------------------------</p>
+                            <p>Você tem três tentativas DEMOS com R$ 50,00 Fictícios</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btnMeio" id="comoFunciona" data-toggle="modal"
+                data-target="#modalGanhadores">Ver Ganhadores</button>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalGanhadores" tabindex="-1" role="dialog"
+                aria-labelledby="modalGanhadoreslLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalGanhadoresLabel">Ganhadores</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h1>Ultimos ganhadores:</h1>
+                            <table>
+                                <tr class="tituloTabela">
+                                    <th s>USER</th>
+                                    <th>BET</th>
+                                    <th>X</th>
+                                    <th>RETURN</th>
+                                </tr>
+                                <tr>
+                                    <td>Luckman75</td>
+                                    <td>R$ 11,23</td>
+                                    <td>1.4 x</td>
+                                    <td>R$ 15,72</td>
+                                </tr>
+                                <tr>
+                                    <td>LucasDrip69</td>
+                                    <td>42,75</td>
+                                    <td>X</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>XXXtentationXXX</td>
+                                    <td>R$ 6,55</td>
+                                    <td>0.88 x</td>
+                                    <td>R$ 5,76</td>
+                                </tr>
+                                <tr>
+                                    <td>RamonDinoStrong</td>
+                                    <td>R$ 110,23</td>
+                                    <td>2.77 x</td>
+                                    <td>R$ 305,33</td>
+                                </tr>
+                                <tr>
+                                    <td>JohnLinux84</td>
+                                    <td>R$ 43,00</td>
+                                    <td>x</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>FofinhoAfera</td>
+                                    <td>R$ 10,00</td>
+                                    <td>14.11 x</td>
+                                    <td>R$ 141,10</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Legal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div>
+            <button type="button" class="btnMeio" data-toggle="modal"
+                data-target="#sacarDepositar">Sacar/Depositar</button>
+
+            <div class="modal fade" id="sacarDepositar" tabindex="-1" role="dialog"
+                aria-labelledby="sacarDepositarLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="sacarDepositarLabel">Financeiro</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <input step=".01" placeholder="Depósito" rows="2" cols="10" type="number"
+                             id="depValor"  required>
+                            <br>
+                            <br>
+
+                            <button type="button" class="btn btn-secondary" id="depositarBtn">Depositar</button>
+                            <br><br>
+                            <input placeholder="Saque" rows="2" cols="10" type="number" id="saqValor" required>
+                            <br><br>
+                            <button type="button" class="btn btn-primary" id="sacarBtn">Sacar</button>
+
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Feito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <iframe src="footer.html" style="height: 250px;
+        width: 99%;">
+    </iframe>
+
+    <script src="js/main.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/logado.js"></script>
+</body>
+
+
+</html>

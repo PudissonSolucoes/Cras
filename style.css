@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+}
+header {
+  background-color: #408FDD;
+  border-bottom: solid;
+  border-bottom-color: #EDFA09;
+}
+h2 {
+  margin: 0 0;
+  color:red;
+}
+header a {
+  color: #EDFA09;
+  text-decoration: none;
+  
+  font-size: 30px;
+}
+
+header img {
+  margin: 5px 0px;
+  height: 70px;
+}
+
+.flutuar {
+  float: right;
+  display: flex;
+}
+
+.flutuar a {
+  margin: 0px 15px;
+}
+
+section {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 25px 40px;
+  text-align: center;
+}
+
+section h1 {
+  color: rgb(71, 205, 0);
+  font-size: 35px;
+  margin: 10px;
+  text-align: center;
+}
+
+article p {
+  color: rgb(71, 205, 0);
+  border-radius: 50%;
+  text-align: center;
+  background-color: #408FDD;
+}
+
+.anteriores {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.anteriores p {
+  margin: 25px;
+  font-size: 30px;
+  width: 100px;
+}
+
+canvas {
+  margin: 0 15px;
+
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  background-color: rgb(65, 87, 62);
+}
+
+td,
+th {
+  border: 3px solid black;
+  text-align: left;
+  padding: 8px;
+  height: 40px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(157, 150, 150);
+  ;
+}
+
+.tituloTabela {
+  color: green;
+  font-size: x-large;
+}
+
+.aposta {
+  background-color: #408FDD;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  
+  text-align: center;
+}
+
+textarea {
+    background-color: #A39F8B;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 25px;
+    text-align: left;
+}
+
+.btnVerde {
+  font-size: 30px;
+  background-color: rgb(71, 205, 0);
+  padding: 10px 25px;
+  margin: 5px 0px;
+  font-weight: bold;
+  font-style: italic;
+  border-color: forestgreen;
+  border-radius:5px;
+  box-shadow: 2px 2px 8px rgba(0, 255, 255, 1);
+  cursor: pointer;
+  
+}
+.btnMeio{
+  font-size: 30px;
+    background-color: cornsilk;
+    padding: 10px 25px;
+    margin: 5px 0px;
+    font-weight: bold;
+    font-style: italic;
+    color: steelblue;
+    border-color: cornflowerblue;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 155, 1);
+    cursor: pointer;
+}
+.aposta .btnVerde,.aposta .btnMeio {
+  margin: 50px 0px;
+}
+.btnCinza {
+  font-size: 30px;
+  border-style: inset;
+    padding: 0px 16px;
+    margin: 15px 0px;
+    font-weight: bold;
+    background: linear-gradient(to LEFT, #818181, #F8F8F8);
+    border-color: white;
+    cursor: pointer;
+}
+
+footer {
+  background-color: rgb(19, 19, 19);
+  display: grid;
+}
+h3 {
+  color: #555051;
+  font-size: x-large;
+  font-weight: bolder;
+}
+footer a {
+  text-decoration: none;
+  display: block;
+  color: #555051;
+  padding: 2px 0px;
+  font-family: arial;
+}
+footer p {
+  text-align: center;
+  color: #555051;
+}
+.grupoRodape{
+  display: grid;
+  grid-template-columns: 40% 20% 20% 20%;
+}

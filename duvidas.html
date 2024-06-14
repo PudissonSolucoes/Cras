@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="secundarias.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="img/logoPassaro.ico">
+
+    <title>Dúvidas</title>
+</head>
+
+<body>
+    <iframe src="header.html" style="height: 95px;
+    width: 99%;">
+    </iframe>
+    <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/93/93634.png" style="    height: 100px;
+    float: left;
+    margin-left: 10%;cursor: pointer;" id="backButton">
+    </div>
+    <h1 style="    color: transparent;">.</h1>
+
+    <h1>Dúvidas</h1>
+    <!-- ---------------------------------------------------- -->
+    <h2>Como jogar</h2>
+    <p>Um jogo de aposta onde você aposta um certo valor e quando você clicar em APOSTAR um multiplicador irá aumentando
+        conforme o tempo começando do 0(zero).
+        O cálculo será feito com o SEU VALOR APOSTA x MULTIPLICADOR.
+        Se você conseguir clicar em resgatar ANTES DE O PÁSSARO EXPLODIR,você receberá seu SEU VALOR APOSTA x
+        MULTIPLICADOR.
+    </p>
+
+    <p>
+    <h3> DEMO</h3>
+    <p>
+        Você começa com R$50,00 FICTÍCIOS e você tem apenas 3 chances para estar testando.
+
+    <h3>PARA JOGAR</h3>
+    Para jogar de verdade,você precisa depositar no mínimo R$ 10,00 REAIS.
+    </p>
+    <!-- ---------------------------------------------------- -->
+    <h2>Quem somos</h2>
+    <p>Meu nome é Gabriel,sou estudante de TI,garçom e procurando emprego na área e como não achei ainda,
+        me divirto fazendo projetos paralelos e esse é um deles e decidi jogar na WEB para aprendizado e ver no que da.
+    </p>
+    <!-- ---------------------------------------------------- -->
+    <h2>Parceiros</h2>
+    <p>No momento não temos ainda.</p>
+    <!-- ---------------------------------------------------- -->
+    <h2>Perguntas Frequentes</h2>
+    <p>1 - Quantas vezes posso jogar sem botar dinheiro?</p>
+    <p>R: 3(Três).</p>
+    <p>------------------------------------------------</p>
+    <p>2 - Como fazer uma conta?</p>
+    <p>R: Clique em <a href="registro.html">CADASTRAR</a> lá no cabeçalho,preencha os dados e confirma,ao ver a mensagem
+        'criado com sucesso'
+        sua conta foi criada!
+    </p>
+    <p>------------------------------------------------</p>
+    <p>3 - Como logar?</p>
+    <p>R: Ao criar uma conta,bote o email e senha do registro que você cadastrou.
+    </p>
+    <p>------------------------------------------------</p>
+    <p>4 - Como depositar dinheiro?</p>
+    <p>R: bla bla bla bla bla blabla bla blabla bla bla
+    </p>
+    <p>------------------------------------------------</p>
+    <p>5 - Qual o valor mínimo para depositar?</p>
+    <p>R: O valor mínimo para depositar é R$ 10,00 Reais
+    </p>
+    <p>------------------------------------------------</p>
+    <p>6 - Como Sacar</p>
+    <p>R: bla bla bla bla bla blabla bla blabla bla bla
+    </p>
+    <p>------------------------------------------------</p>
+    <h2>Fale Conosco</h2>
+    <form action="http://formmail.kinghost.net/formmail.cgi" method="POST">
+        <input type="hidden" name="recipient" value="testeiseuemail@gmail.com">
+        <!-- Pode ser qualquer endereço de email -->
+        <input type="hidden" name="redirect" value="http://seudominio">
+        <!-- Após o envio, o usuário será redirecionado para a página configurada aqui -->
+        <input type="hidden" name="subject" value="teste de assunto"> <!-- Assunto da mensagem -->
+        <input type="hidden" name="email" value="email@doseudominio">
+        <!-- Deve ser uma conta de email ativa em seu domínio -->
+
+        <p>
+            Nome:<br />
+            <input type="text" size="30" name="nome">
+        </p>
+
+        <p>
+            E-mail:<br />
+            <input type="text" size="30" name="replyto">
+        </p>
+
+        <p>
+            Comentário:<br />
+            <textarea type="text" name="Comentarios" rows="5" cols="50"></textarea>
+        </p>
+
+        <p>
+            <input type="submit" name="BTEnvia" value="Enviar">
+            <input type="reset" name="BTApaga" value="Apagar">
+        </p>
+    </form>
+    <iframe src="footer.html" style="height: 250px;
+    width: 99%;">
+    </iframe>
+</body>
+<script>
+    let backButton = document.getElementById("backButton");
+    let logIn;
+    backButton.addEventListener("click", (e) => {
+    
+        if (logIn == "false") {
+            window.location = "index.html"
+        } else {
+            
+            logIn = localStorage.getItem("logIn")
+                ? localStorage.getItem("logIn")
+                : "false";
+            let procurarSeparar = logIn.indexOf('+');
+            let logInUsuario = logIn.substring(procurarSeparar + 1, logIn.length);
+
+
+            window.location = "logado.html#{" + logInUsuario + "}";
+        }
+
+
+    })
+
+</script>
+
+</html>

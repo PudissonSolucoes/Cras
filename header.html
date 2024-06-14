@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+<header>
+    <a href="index.html" target="_parent" id="passaroHref"> <img src="img/logoPassaro.png"></a>
+    <a href="index.html" target="_parent" id="letraHref"> <img src="img/letras-logo.png"></a>
+
+
+    <div class="flutuar" id="naoLogadoMenu">
+        <a href="logar.html" target="_parent"><img src="img/register.png"></a>
+        <a href="logar.html" target="_parent">
+            <p>Logar</p>
+        </a>
+        <a href="registro.html" target="_parent"> <img src="img/login.png"></a>
+        <a href="registro.html" target="_parent">
+            <p>Cadastrar</p>
+        </a>
+    </div>
+
+    <div class="flutuar" id="logadoMenu" style="display: none;">
+
+        <a href="index.html" target="_parent"> <img src="img/login.png"></a>
+        <a href="index.html" target="_parent">
+            <p>Sair</p>
+        </a>
+    </div>
+</header>
+<script>
+    let logadoMenu = document.getElementById("logadoMenu");
+    let naoLogadoMenu = document.getElementById("naoLogadoMenu");
+    let passaroHref = document.getElementById("passaroHref");
+    let letraHref = document.getElementById("letraHref");
+    logIn = localStorage.getItem("logIn")
+        ? localStorage.getItem("logIn").split(";")
+        : [];
+
+    let validar = JSON.stringify(logIn).indexOf("true");
+    if (validar != -1) {
+        naoLogadoMenu.style.display = 'none';
+        logadoMenu.style.display = 'flex';
+        logadoMenu.style.margin = '0 5%';
+        passaroHref.href = 'logado.html';
+        letraHref.href = 'logado.html';
+    }
+
+    logadoMenu.addEventListener("click", (e) => {
+        logIn = 'false';
+        localStorage.setItem("logIn", logIn);
+
+        naoLogadoMenu.style.display = 'flex';
+        logadoMenu.style.display = 'none';
+        alert("Deslogando!");
+        window.location = "index.html";
+
+    });
+</script>

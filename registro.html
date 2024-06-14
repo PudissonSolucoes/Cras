@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="secundarias.css" media="screen" />
+  <link rel="icon" type="image/x-icon" href="img/logoPassaro.ico">
+
+  <title>Registro</title>
+</head>
+
+<body>
+  <iframe src="header.html" style="height: 95px;
+    width: 99%;">
+  </iframe>
+
+  <h1>Página de Registro</h1>
+
+  <form>
+
+    <div class="container">
+      <label for="uname"><b>Usuário</b></label>
+      <input type="text" placeholder="Entre com usuário"  id="inUsuario" name="text" pattern="[a-zA-Z0-9]+" required>
+
+      <label for="uname"><b>Email</b></label>
+      <input type="text" placeholder="Entre com email" name="uname"  id="inEmail" required>
+
+      <label for="psw" ><b>Senha</b></label>
+      <input type="password" placeholder="Entre com a senha" name="psw" id="inSenha" required>
+
+      <label for="psw" ><b>Confirmar Senha</b></label>
+      <input type="password" placeholder="Confirme a senha" name="psw" id="inConfirmar" required>
+
+      <button type="submit" id="cadastrarBtn">Cadastrar</button>
+
+    </div>
+
+  </form>
+
+  <iframe src="footer.html" style="height: 250px;
+    width: 99%;">
+  </iframe>
+</body>
+<script src="js/validacao.js"></script>
+
+</html>
